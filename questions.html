@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>بازی علوم پنجم</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="game">
+
+<div class="gameBox">
+
+    <h2 id="student"></h2>
+
+    <!-- کادرهای بالای صفحه -->
+    <div class="quiz-top">
+
+        <div class="glass-box">
+            ⏱
+            <div id="timer">05:00</div>
+        </div>
+
+        <div class="glass-box">
+            ❓
+            <div>
+                <span id="currentQuestion">1</span> /
+                <span id="totalQuestions">5</span>
+            </div>
+        </div>
+
+        <div class="glass-box">
+            ✅
+            <div id="correctAnswers">0</div>
+        </div>
+
+    </div>
+
+    <!-- شماره سؤال -->
+    <div class="questionNumber" id="questionNumber"></div>
+
+    <!-- متن سؤال -->
+    <div class="question" id="question"></div>
+
+    <!-- گزینه‌ها -->
+    <div class="answers">
+
+        <button class="answer"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
+
+    </div>
+
+    <!-- دکمه سؤال بعد -->
+    <button id="nextBtn" onclick="nextQuestion()" style="display:none;">
+        ➡ سؤال بعد
+    </button>
+
+</div>
+
+<script>
+document.getElementById("student").innerHTML =
+"👦 " + localStorage.getItem("student");
+</script>
+
+<script src="script.js"></script>
+
+<script>
+loadQuestion();
+startTimer();
+</script>
+
+</body>
+</html>
